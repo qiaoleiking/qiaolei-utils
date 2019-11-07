@@ -40,6 +40,28 @@ public class TestStringTest {
 		assertTrue(StringUtils.havaValue("aaa"));
 	}
 	
+	// 测试随机生成的字母字符串
+	@Test
+	public void testRandomStr(){
+		String randomStr = StringUtils.getRandomStr(5);
+		System.out.println(randomStr);
+	}
+	
+	//测试随机生成的字母和数字组合
+	@Test
+	public void testRandomEng(){
+		String randomEng = StringUtils.getRandomEng(10);
+		System.out.println(randomEng);
+	}
+	
+	
+	// 测试随机中文
+	@Test
+	public void getRandomCn(){
+		String randomCn = StringUtils.getRandomCn(5);
+		System.out.println(randomCn);
+	}
+	
 }
 
 
