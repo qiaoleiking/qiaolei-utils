@@ -27,6 +27,19 @@ public class TestStringTest {
 		// 断言测试  （假）
 		assertTrue(StringUtils.isBlank("aaa"));
 	}
+	
+	@Test
+	public void testIsValue(){
+		// 断言测试  （假）
+		assertFalse(StringUtils.havaValue(""));
+	}
+	
+	@Test
+	public void testIsValue1(){
+		// 断言测试  （真）
+		assertTrue(StringUtils.havaValue("aaa"));
+	}
+	
 }
 
 
