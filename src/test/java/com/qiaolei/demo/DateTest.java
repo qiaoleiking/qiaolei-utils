@@ -1,6 +1,9 @@
 package com.qiaolei.demo;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import org.junit.Test;
 
@@ -47,6 +50,14 @@ public class DateTest {
 	public void isToday(){
 		boolean today = DateUtils.isToday(new Date(96,10,04));
 		System.out.println(today);
+	}
+	
+	//测试是否在本周方法
+	@Test
+	public void isWeek(){
+		
+		boolean thisWeek = DateUtils.isThisWeek(new Date());
+		System.out.println(thisWeek);
 	}
 	
 }

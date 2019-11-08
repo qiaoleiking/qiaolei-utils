@@ -3,6 +3,7 @@ package com.qiaolei;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /*
  * 
@@ -132,7 +133,47 @@ public class DateUtils {
 	}
 	
 	
-	
+	/**
+	 * 
+	    * @Title: isThisWeek
+	    * @Description:判断是否在本周
+	    * @param @param date
+	    * @param @return    参数
+	    * @return boolean    返回类型
+	    * @throws
+	 */
+	public static boolean isThisWeek(Date date) {
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+
+		Calendar firstDayOfWeek = Calendar.getInstance(Locale.getDefault());
+
+		firstDayOfWeek.setFirstDayOfWeek(Calendar.MONDAY);
+
+		int day = firstDayOfWeek.get(Calendar.DAY_OF_WEEK);
+
+		firstDayOfWeek.add(Calendar.DATE, -day + 1 + 1);// 后面的+1是因为从周日开始
+
+		// 本周一的日期
+
+		System.out.println(format.format(firstDayOfWeek.getTime()));
+
+		Calendar lastDayOfWeek = Calendar.getInstance(Locale.getDefault());
+
+		lastDayOfWeek.setFirstDayOfWeek(Calendar.MONDAY);
+
+		day = lastDayOfWeek.get(Calendar.DAY_OF_WEEK);
+
+		lastDayOfWeek.add(Calendar.DATE, 7 - day + 1);
+
+		// 本周星期天的日期
+
+		System.out.println(format.format(lastDayOfWeek.getTime()));
+
+		return (date.getTime() < lastDayOfWeek.getTime().getTime()
+				&& date.getTime() > firstDayOfWeek.getTime().getTime());
+
+	}
 	
 	
 	
