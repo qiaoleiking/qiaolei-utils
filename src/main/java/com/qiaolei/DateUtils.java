@@ -14,6 +14,11 @@ import java.util.Date;
 public class DateUtils {
 	
 	/**
+	 * 常量计算一天的毫秒数
+	 */
+	static final long millionSecondsPerDay = 1000 * 60 * 60 * 24;
+	
+	/**
 	 * 
 	    * @Title: compare
 	    * @Description:比价日期
@@ -75,6 +80,47 @@ public class DateUtils {
 		return age;
 		
 	}
+	
+	
+	/**
+	 * 
+	    * @Title: reamainDays
+	    * @Description: 计算到将来的一个日期 还剩余多少天
+	    * @param @param futureDate
+	    * @param @return
+	    * @param @throws CmsException    参数
+	    * @return int    返回类型
+	    * @throws
+	 */
+	public static int reamainDays(Date futureDate) throws CmsException{
+		
+		/*
+		 * 判断输入的日期   如果小于当前日期则认为不合法
+		 */
+		if(futureDate.compareTo(new Date()) < 0){
+			throw new CmsException("未来的日期不能小于当前日期 : "+futureDate);
+		}
+		
+		
+		// 计算有多少天
+		int day = (int) ((futureDate.getTime() - new Date().getTime())/millionSecondsPerDay);
+		
+		return day;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

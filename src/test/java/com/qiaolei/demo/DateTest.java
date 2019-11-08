@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import com.qiaolei.CmsException;
 import com.qiaolei.DateUtils;
 
 /*
@@ -30,10 +31,16 @@ public class DateTest {
 		
 		int calculateAge = DateUtils.calculateAge(new Date(96,10,04));
 		System.out.println(calculateAge);
+		
 	}
 	
-	
-	
+	// 测试到将来的一天有多少天
+	@Test
+	public void reamainDays() throws CmsException{
+		Date date = new Date(119,11,9);
+		int reamainDays = DateUtils.reamainDays(date);
+		System.out.println(reamainDays);
+	}
 	
 	
 	
