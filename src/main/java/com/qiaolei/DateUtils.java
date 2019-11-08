@@ -1,5 +1,6 @@
 package com.qiaolei;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -109,7 +110,26 @@ public class DateUtils {
 		
 	}
 	
-	
+	/**
+	 * 
+	    * @Title: isToday
+	    * @Description: 判断是否为今天
+	    * @param @return    参数
+	    * @return boolean    返回类型
+	    * @throws
+	 */
+	public static boolean isToday(Date date){
+		
+		
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+		String format = simpleDateFormat.format(date);
+		
+		
+		String format2 = simpleDateFormat.format(new Date());
+		
+		return format.equals(format2);
+		
+	}
 	
 	
 	

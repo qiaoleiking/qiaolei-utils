@@ -42,9 +42,12 @@ public class DateTest {
 		System.out.println(reamainDays);
 	}
 	
-	
-	
-	
+	//判断是否为今天
+	@Test
+	public void isToday(){
+		boolean today = DateUtils.isToday(new Date(96,10,04));
+		System.out.println(today);
+	}
 	
 }
 
