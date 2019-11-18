@@ -138,7 +138,7 @@ public class StringUtils {
 	    * @return char    返回类型
 	    * @throws
 	 */
-	private static char getRandomCn() {
+	public static char getRandomCn() {
 				
 		        String str = "";
 		        int hightPos; //

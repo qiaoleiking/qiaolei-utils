@@ -46,7 +46,7 @@ public class FileUtils {
 		String str = "";
 		
 		while((str = reader.readLine()) != null){
-			System.out.println(str);
+			//System.out.println(str);
 			lines.add(str);
 		}
 		

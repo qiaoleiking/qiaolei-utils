@@ -11,12 +11,12 @@ import com.qiaolei.StringUtils;
 
 public class FileTest {
 	
-	@Test
+/*	@Test
 	public void testFile() throws Exception{
 		
 		List<String> readFile = FileUtils.readFile("C://Users//Administrator//Desktop//aaa.txt");
 		for (String string : readFile) {
 			System.out.println(string);
 		}
-	}
+	}*/
 }
